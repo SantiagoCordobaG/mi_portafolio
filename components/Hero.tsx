@@ -1,4 +1,5 @@
 import { profile } from "@/data/profile";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -35,8 +36,14 @@ export default function Hero() {
 
       <div className="mx-auto w-full max-w-sm">
         <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6 shadow-2xl shadow-black/30">
-          <div className="flex aspect-square items-center justify-center rounded-lg border border-teal-300/30 bg-gradient-to-br from-teal-300 via-emerald-300 to-amber-200 text-6xl font-black text-slate-950">
-            {profile.initials}
+          <div className="relative aspect-square overflow-hidden rounded-lg border border-teal-300/30 bg-white/5">
+            <Image
+              src={profile.avatar}
+              alt={`Foto de ${profile.name}`}
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
           <div className="mt-6 grid grid-cols-2 gap-6 border-t border-white/10 pt-5 text-sm">
             <div>

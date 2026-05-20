@@ -7,7 +7,8 @@ export interface SocialLink {
 export const profile = {
   name: "Santiago Cordoba Garces",
   role: "Desarrollador y apasionado por pentesting",
-  initials: "SCG", //Aqui quiero que se vea una foto mia, pero por ahora uso mis iniciales
+  initials: "SCG",
+  avatar: "/avatar.webp", // Ruta de la imagen en public/avatar.webp
   email: "cordobagarcessantiago@gmail.com",
   githubUsername: "SantiagoCordobaG",
   githubUrl: "https://github.com/SantiagoCordobaG",
