@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: 
+
+Sitemap: https://mi-portafolio.vercel.app/sitemap.xml

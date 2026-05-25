@@ -1,0 +1,6 @@
+CV placeholder
+
+Reemplaza este archivo por tu CV final en PDF cuando lo tengas listo.
+
+Nombre: Santiago Cordoba Garces
+Rol: Tecnico en sistemas enfocado en desarrollo web, soporte TI y motivado por pentesting.

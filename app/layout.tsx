@@ -1,24 +1,28 @@
 import type { Metadata } from "next";
+import SpotlightCursor from "@/components/SpotlightCursor";
 import "./globals.css";
 
-// Metadata basica para SEO y tarjetas al compartir el sitio.
 export const metadata: Metadata = {
-  title: "Santiago Cordoba Garces | Portafolio",
+  title: "Santiago Córdoba Garcés | Técnico en sistemas",
   description:
-    "Portafolio personal de Santiago Cordoba Garces, desarrollador y apasionado por pentesting.",
+    "Portafolio de Santiago Córdoba Garcés, técnico en sistemas en formación tecnológica con enfoque en desarrollo web, soporte TI, mantenimiento y ciberseguridad básica.",
   keywords: [
-    "Santiago Cordoba Garces",
-    "desarrollador frontend",
+    "Santiago Córdoba Garcés",
+    "técnico en sistemas",
+    "tecnólogo en sistemas",
+    "soporte TI",
+    "mantenimiento de equipos",
+    "desarrollo web",
     "Next.js",
     "TypeScript",
     "Tailwind CSS",
-    "pentesting",
+    "pentesting básico",
     "portafolio",
   ],
   openGraph: {
-    title: "Santiago Cordoba Garces | Portafolio",
+    title: "Santiago Córdoba Garcés | Técnico en sistemas",
     description:
-      "Proyectos, habilidades y experiencia de Santiago Cordoba Garces en desarrollo web y pentesting.",
+      "Perfil profesional, proyectos reales y áreas de enfoque de Santiago Córdoba Garcés en sistemas, desarrollo web y soporte técnico.",
     type: "website",
     locale: "es_CO",
   },
@@ -34,7 +38,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body className="antialiased">
+        <SpotlightCursor />
+        {children}
+      </body>
     </html>
   );
 }

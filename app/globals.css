@@ -2,8 +2,10 @@
 
 :root {
   color-scheme: dark;
-  --background: #080b10;
+  --background: #06090f;
   --foreground: #eef4f7;
+  --panel: rgba(10, 15, 24, 0.72);
+  --border: rgba(255, 255, 255, 0.1);
 }
 
 html {
@@ -13,12 +15,24 @@ html {
 body {
   min-height: 100vh;
   background:
-    linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
     var(--background);
-  background-size: 48px 48px;
+  background-size: 42px 42px;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "IBM Plex Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(34, 211, 238, 0.16), transparent 24%),
+    radial-gradient(circle at 85% 18%, rgba(45, 212, 191, 0.1), transparent 22%),
+    radial-gradient(circle at 50% 85%, rgba(14, 165, 233, 0.08), transparent 28%);
+  z-index: -1;
 }
 
 ::selection {
@@ -26,9 +40,65 @@ body {
   color: #ffffff;
 }
 
+section {
+  scroll-margin-top: 96px;
+}
+
 button,
 a,
 input,
 textarea {
   outline-offset: 4px;
+}
+
+.surface-card {
+  background: var(--panel);
+  backdrop-filter: blur(16px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 24px 60px rgba(0, 0, 0, 0.24);
+}
+
+.spotlight-card {
+  --spotlight-x: 50%;
+  --spotlight-y: 50%;
+  --spotlight-opacity: 0;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  contain: layout paint;
+}
+
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    240px circle at var(--spotlight-x) var(--spotlight-y),
+    rgba(34, 211, 238, 0.18),
+    transparent 70%
+  );
+  opacity: var(--spotlight-opacity);
+  transition:
+    opacity 220ms ease,
+    background 120ms ease;
+  z-index: 0;
+  pointer-events: none;
+  will-change: opacity;
+}
+
+.spotlight-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.spotlight-card:hover::before,
+.spotlight-card:focus-within::before {
+  opacity: 1;
+}
+
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .spotlight-card::before {
+    display: none;
+  }
 }

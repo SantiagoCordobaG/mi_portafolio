@@ -1,35 +1,62 @@
-export interface ExperienceItem {
-  period: string;
-  title: string;
-  organization: string;
-  description: string;
-  type: "Formacion" | "Proyecto" | "Practica" | "Logro";
-}
+import { TimelineItemData } from "@/types/site";
 
-// Puedes mezclar estudios, cursos, trabajos, proyectos y logros personales.
-export const experienceItems: ExperienceItem[] = [
+export const experienceItems: TimelineItemData[] = [
   {
-    period: "Actualidad",
-    title: "Aprendizaje en desarrollo web y ciberseguridad",
-    organization: "Ruta personal",
+    period: "2023",
+    title: "Graduado de bachillerato",
+    organization: "Formación académica",
     description:
-      "Construccion de bases solidas en frontend moderno mientras practico fundamentos de pentesting en laboratorios controlados.",
-    type: "Formacion",
+      "Finalización del bachillerato y transición hacia una ruta técnica enfocada en sistemas.",
+    type: "Académico",
+  },
+  {
+    period: "2023",
+    title: "Técnico en Sistemas",
+    organization: "SENA",
+    description:
+      "Base técnica en sistemas para fortalecer soporte, herramientas, mantenimiento y trabajo práctico.",
+    type: "Formación",
+  },
+  {
+    period: "2024",
+    title: "Curso Cisco de mantenimiento de equipos",
+    organization: "Cisco",
+    description:
+      "Refuerzo en mantenimiento, revisión de componentes, buenas prácticas y cuidado operativo de equipos.",
+    type: "Curso",
   },
   {
     period: "2026",
-    title: "Portafolio web personal",
-    organization: "Proyecto propio",
+    title: "Curso Ethical Hacker",
+    organization: "Formación complementaria",
     description:
-      "Creacion de una primera version profesional para presentar habilidades, proyectos y objetivos de aprendizaje.",
-    type: "Proyecto",
+      "Finalizado como parte de una ruta de aprendizaje ético en seguridad y reconocimiento controlado.",
+    type: "Curso",
+    status: "Terminado",
   },
   {
-    period: "2025 - 2026",
-    title: "Practicas con Linux, redes y seguridad",
-    organization: "Laboratorios personales",
+    period: "2026",
+    title: "Curso SENA Calidad de Software",
+    organization: "SENA",
     description:
-      "Exploracion de comandos, servicios, reconocimiento basico, documentacion de hallazgos y mejora de criterio tecnico.",
-    type: "Practica",
+      "Finalizado para fortalecer criterios de calidad, revisión y mejora en desarrollo de software.",
+    type: "Curso",
+    status: "Terminado",
+  },
+  {
+    period: "Actualidad",
+    title: "Formación como tecnólogo en sistemas",
+    organization: "Ruta académica en curso",
+    description:
+      "Continúo mi formación tecnológica mientras construyo proyectos, practico soporte y amplío mis bases técnicas.",
+    type: "Formación",
+  },
+  {
+    period: "Actualidad",
+    title: "Disponible para prácticas laborales",
+    organization: "Búsqueda activa",
+    description:
+      "Preparado para asumir prácticas y oportunidades iniciales con aprendizaje, orden técnico y mejora constante.",
+    type: "Disponibilidad",
   },
 ];
